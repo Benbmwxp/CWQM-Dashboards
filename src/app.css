@@ -1,0 +1,14 @@
+/* App-level Tailwind: same tokens and classes as the design system. */
+@import "tailwindcss";
+@import "@severn-trent/cwqm-design-system/tokens.css";
+@import "@severn-trent/cwqm-design-system/tailwind-theme.css";
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@utility tabular { font-variant-numeric: tabular-nums; }
+
+@layer base {
+  html { font-family: var(--st-font-sans); background: var(--st-color-surface-page); color: var(--st-color-content-default); }
+  body { font-size: var(--st-text-md); }
+  [data-theme="dark"] { color-scheme: dark; }
+  :focus-visible { outline: 2px solid var(--st-color-line-focus); outline-offset: 2px; }
+}
